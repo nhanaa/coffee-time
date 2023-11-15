@@ -1,34 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Coffee Time
 
-## Getting Started
+![App screenshot](app.png)
 
-First, run the development server:
+## About The Project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+This project is a full stack web application that simulates the process of a coffee machine where a user can use to register and get their coffee brewed as well as notify them when their coffee is ready.
+
+This project was created with:
+- Typescript
+- React v18.2.0
+- Node v20.8.10
+- Next v14.0.1
+- Material UI v5.14.16
+- MongoDB Atlas
+
+## Installation
+
+To run the project, follow these steps:
+
+1. Clone the repository
 ```
+git clone
+```
+2. Build the project
+```
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to use the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How To Use
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Registration
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To use this application, the users must first do a one time registration with their name and email:
+1. Navigate to register tab with `register` on the navigation bar. The user can then register with the form.
+2. Click on register to finish registering. Make sure that your email has not been used.
 
-## Learn More
+### Brewing
 
-To learn more about Next.js, take a look at the following resources:
+Once user has registered, they can start their brew:
+1. On the home page, click on brew button to start the machine and select your name.
+2. Then the start brew will appear. The user can now start the brewing process by clicking that button. The brewing process would take from 50s-1min.
+3. After the process is done, the coffee of that user can be pinged by another person to notify the user their coffee is done, or be picked up by the user.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Pinging
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+When a user's coffee is done and the user is not there to pick it up, another user can ping to notify that user their coffee is done:
+1. On the home page, click on the ping button to open the list of brewed coffee.
+2. Click on the ping button on the row correspond to the user you want to notify and an email will be sent to their email notifying that their coffee is ready.
 
-## Deploy on Vercel
+### Picking up coffee
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+When your coffee is ready you can pick up your coffee and mark it on the machine so that it is ready for a next brew:
+1. On the home page, click on the pick up button to open the list of brewed coffee:
+2. Click on the pick up button on the row correspond to your coffee and your coffee will be marked as picked and be available for a next brew.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Cautions
+
+Do not navigate out of the page when a user is selected or the brewing session is going on.
+
+## Inferred Features Implemented
+Below are some of the features implemented that were not required:
+- Email notification system: I implemented an email notification system with a library called `nodemailler` and a Gmail that I created.

@@ -1,0 +1,11 @@
+body {
+  background: #ebf0fa;
+  color: black;
+  margin: 0;
+}
+h3, h4 {
+  color: #d4a91d;
+}
+.tableCell {
+  width: 33%;
+}
