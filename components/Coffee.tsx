@@ -18,7 +18,7 @@ export type CoffeeProps = {
 const Coffee = ({ users }: CoffeeProps) => {
   const [machineStatus, setMachineStatus] = React.useState<string>(
     'idle'
-  ); // ["idle", "brewing"]
+  ); // machine status includes: ["idle", "brewing"]
   const [userSelected, setUserSelected] = React.useState<boolean>(
     false
   );
