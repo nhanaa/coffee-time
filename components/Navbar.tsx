@@ -27,6 +27,14 @@ const Navbar = () => {
           Home
         </Link>
         <Link
+          href="/edit"
+          color="inherit"
+          underline="none"
+          sx={{ margin: 2 }}
+        >
+          Edit
+        </Link>
+        <Link
           href="/register"
           color="inherit"
           underline="none"
