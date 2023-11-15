@@ -20,7 +20,7 @@ To run the project, follow these steps:
 
 1. Clone the repository
 ```
-git clone
+git clone https://github.com/nhanaa/coffee-time.git
 ```
 2. Build the project
 ```
