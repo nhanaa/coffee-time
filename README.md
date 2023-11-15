@@ -22,7 +22,11 @@ To run the project, follow these steps:
 ```
 git clone https://github.com/nhanaa/coffee-time.git
 ```
-2. Build the project
+2. Install dependencies
+```
+npm install
+```
+3. Run the project
 ```
 npm run dev
 ```
