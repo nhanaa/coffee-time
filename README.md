@@ -66,3 +66,4 @@ Do not navigate out of the page when a user is selected or the brewing session i
 ## Inferred Features Implemented
 Below are some of the features implemented that were not required:
 - Email notification system: I implemented an email notification system with a library called `nodemailler` and a Gmail that I created.
+- Edit users information: Although in the instructions, editing the users information was not required, I implemented the functionality to allow users to edit their information since I believe the users may want to change their information. I implemented it in a new route and with a new table to let the users edit or remove their info.
