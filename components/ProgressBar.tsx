@@ -32,23 +32,22 @@ const ProgressBar = ({
       if (percentage < 100) {
         requestAnimationFrame(updateProgress);
       } else {
-        if (currentBrew) {
-          await fetch(`api/users/${currentBrew.id}`, {
-            method: 'PUT',
-            headers: {
-              'Content-type': 'application/json',
-            },
-            body: JSON.stringify({
-              name: currentBrew.name,
-              email: currentBrew.email,
-              status: 'brewed',
-            }),
-          });
+        if (!currentBrew) return;
+        await fetch(`api/users/${currentBrew.id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: currentBrew.name,
+            email: currentBrew.email,
+            status: 'brewed',
+          }),
+        });
 
-          setCurrentBrew(null);
-          setUserSelected(false);
-          setMachineStatus('idle');
-        }
+        setCurrentBrew(null);
+        setUserSelected(false);
+        setMachineStatus('idle');
         router.refresh();
       }
     };
