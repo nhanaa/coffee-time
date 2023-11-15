@@ -33,15 +33,3 @@ export async function GET() {
   }
 
 }
-
-export async function DELETE(request: NextRequest) {
-  try {
-    const id = request.nextUrl.searchParams.get("id");
-    await connectMongoDB();
-    await User.findByIdAndDelete(id);
-    return NextResponse.json({ id }, { status: 200 });
-  } catch (error: any) {
-    console.error(error);
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
-  }
-}
