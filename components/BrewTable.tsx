@@ -35,10 +35,12 @@ const BrewTable = ({
   const router = useRouter();
   const { currentBrew, setCurrentBrew } = useCurrentBrewContext();
 
+  // function to handle the click of the select button on the table
   const handleClick = async (user: User) => {
     setOpenBrew(false);
 
     if (currentBrew) {
+      // if there is already a user selected, deselect by setting their status back to picked
       await fetch(`api/users/${currentBrew.id}`, {
         method: 'PUT',
         headers: {
@@ -53,9 +55,9 @@ const BrewTable = ({
     }
 
     setUserSelected(true);
+    setCurrentBrew(user);
 
-    console.log('Select for brewing user:', user.id);
-
+    // set user status to selected
     await fetch(`api/users/${user.id}`, {
       method: 'PUT',
       headers: {
@@ -68,7 +70,6 @@ const BrewTable = ({
       }),
     });
 
-    setCurrentBrew(user);
     router.refresh();
   };
 

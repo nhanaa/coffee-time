@@ -21,7 +21,7 @@ const Coffee = ({ users }: CoffeeProps) => {
   ); // machine status includes: ["idle", "brewing"]
   const [userSelected, setUserSelected] = React.useState<boolean>(
     false
-  );
+  ); // to check if user has selected a user to brew for
   const [openBrew, setOpenBrew] = React.useState<boolean>(false);
   const [openPing, setOpenPing] = React.useState<boolean>(false);
   const [openPickUp, setOpenPickUp] = React.useState<boolean>(false);
@@ -108,7 +108,7 @@ const Coffee = ({ users }: CoffeeProps) => {
                 setMachineStatus('brewing');
                 setBrewTime(
                   Math.floor(Math.random() * (60 - 50 + 1)) + 50
-                );
+                ); // set a random time from 50-60s as brew time
               }}
               sx={{
                 width: '100px',

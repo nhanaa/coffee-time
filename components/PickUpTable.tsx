@@ -30,6 +30,7 @@ const PickUpTable = ({
 }: BrewTableProps) => {
   const router = useRouter();
 
+  // function to handle the click of the pick up button on the table
   const handleClick = async (user: User) => {
     console.log('Pick up coffee of: ', user.name);
     await fetch(`api/users/${user.id}`, {

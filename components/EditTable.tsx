@@ -34,12 +34,14 @@ const EditTable = ({ users }: EditTableProps) => {
   const [newName, setNewName] = React.useState<string>('');
   const [openDialog, setOpenDialog] = React.useState<boolean>(false);
 
+  // function to handle the click of the edit button on the table
   const handleClickEdit = async (user: User) => {
     setSelectedUser(user);
     setOpenDialog(true);
     router.refresh();
   };
 
+  // function to handle the click of the remove button on the table
   const handleClickRemove = async (user: User) => {
     await fetch(`api/users/${user.id}`, {
       method: 'DELETE',
@@ -51,10 +53,11 @@ const EditTable = ({ users }: EditTableProps) => {
     router.refresh();
   };
 
+  // function to handle the submit of the edit dialog
   const handleSubmit = async () => {
     setOpenDialog(false);
 
-    if (!selectedUser) return;
+    if (!selectedUser) return; // if no user is selected, return. This should never happen
     await fetch(`api/users/${selectedUser.id}`, {
       method: 'PUT',
       headers: {

@@ -32,7 +32,7 @@ const ProgressBar = ({
       if (percentage < 100) {
         requestAnimationFrame(updateProgress);
       } else {
-        if (!currentBrew) return;
+        if (!currentBrew) return; // if there is no current brew, return. This should never happen
         await fetch(`api/users/${currentBrew.id}`, {
           method: 'PUT',
           headers: {

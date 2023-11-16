@@ -6,6 +6,11 @@ import React, {
   ReactNode,
 } from 'react';
 
+/**
+ * This context is used to store the user that is selected for the
+ * current brew section. It is used to pass the the value of the user
+ * to the components used in Coffee component.
+ **/
 export type CurrentBrewContextProps = {
   currentBrew: User | null;
   setCurrentBrew: React.Dispatch<React.SetStateAction<User | null>>;

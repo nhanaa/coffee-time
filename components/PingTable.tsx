@@ -27,6 +27,7 @@ const PingTable = ({
   openPing,
   setOpenPing,
 }: BrewTableProps) => {
+  // function to handle the click of the ping button on the table
   const handleClick = async (user: User) => {
     console.log('Ping your teammate: ', user.name);
 
