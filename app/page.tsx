@@ -2,8 +2,10 @@ import Coffee from '@/components/Coffee';
 import { User } from '@/types/types';
 import React from 'react';
 
+export const dynamic = 'force-dynamic';
+
 const getUsers = async () => {
-  const res = await fetch(process.env.URL + '/api/users', {
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/users', {
     method: 'GET',
     headers: {
       'Content-type': 'application/json',
